@@ -16,10 +16,11 @@ namespace BlazorAppFromScratch
         }
         public void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
         }
