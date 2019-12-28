@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using BlazorAppFromScratch.Services;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace BlazorAppFromScratch
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddScoped<IMyNameService, MyNameService>();
             services.AddServerSideBlazor();
             services.AddRazorPages();
         }

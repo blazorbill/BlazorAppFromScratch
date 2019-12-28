@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29609.76
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorAppFromScratch", "BlazorAppFromScratch\BlazorAppFromScratch.csproj", "{897BCF12-EB47-442D-ABC4-63663FD771AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorAppFromScratch", "BlazorAppFromScratch\BlazorAppFromScratch.csproj", "{897BCF12-EB47-442D-ABC4-63663FD771AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
