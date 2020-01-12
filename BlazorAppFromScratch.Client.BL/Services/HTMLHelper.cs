@@ -5,7 +5,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorAppFromScratch.Client.BL
+namespace BlazorAppFromScratch.Client.BL.Services
 {
     public static class HTTPHelper
     {

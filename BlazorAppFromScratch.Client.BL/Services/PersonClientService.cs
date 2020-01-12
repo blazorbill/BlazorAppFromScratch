@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace BlazorAppFromScratch.Client.BL
+namespace BlazorAppFromScratch.Client.BL.Services
 {
     public class PersonClientService : IPersonClientService
     {

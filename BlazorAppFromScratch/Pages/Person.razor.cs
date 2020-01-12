@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BlazorAppFromScratch.DTO;
-using BlazorAppFromScratch.Client.BL;
+using BlazorAppFromScratch.Client.BL.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorAppFromScratch.Pages
