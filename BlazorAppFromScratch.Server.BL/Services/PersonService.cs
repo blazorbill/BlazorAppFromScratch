@@ -4,7 +4,7 @@ using System.Linq;
 using BlazorAppFromScratch.DTO;
 using System.Threading.Tasks;
 
-namespace BlazorAppFromScratch.Services
+namespace BlazorAppFromScratch.Server.BL.Services
 {
     public class PersonService : IPersonService
     {

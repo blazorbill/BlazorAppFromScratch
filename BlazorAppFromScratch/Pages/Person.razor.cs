@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using BlazorAppFromScratch.DTO;
-using BlazorAppFromScratch.Services;
+using BlazorAppFromScratch.Server.BL.Services;
 using Microsoft.AspNetCore.Components;
 using System.Diagnostics;
 

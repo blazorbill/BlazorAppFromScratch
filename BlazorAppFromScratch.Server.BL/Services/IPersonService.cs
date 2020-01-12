@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BlazorAppFromScratch.DTO;
 
-namespace BlazorAppFromScratch.Services
+namespace BlazorAppFromScratch.Server.BL.Services
 {
     public interface IPersonService
     {

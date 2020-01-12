@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BlazorAppFromScratch.DTO\BlazorAppFromScratch.DTO.csproj" />
+    <ProjectReference Include="..\BlazorAppFromScratch.Server.BL\BlazorAppFromScratch.Server.BL.csproj" />
+  </ItemGroup>
+
 </Project>

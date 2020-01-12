@@ -1,4 +1,4 @@
-﻿using BlazorAppFromScratch.Services;
+﻿using BlazorAppFromScratch.Server.BL.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using System;
