@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlazorAppFromScratch.Client.BL
+namespace BlazorAppFromScratch.Client.BL.Services
 {
-    public interface IPersonService
+    public interface IPersonClientService
     {
         Task<List<PersonDTO>> GetPersons();
         Task<PersonDTO> GetPerson(int id);

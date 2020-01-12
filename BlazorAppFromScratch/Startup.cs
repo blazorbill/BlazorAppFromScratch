@@ -13,7 +13,6 @@ namespace BlazorAppFromScratch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPersonService, PersonService>();
-            services.AddScoped<BlazorAppFromScratch.Client.BL.IPersonService, BlazorAppFromScratch.Client.BL.PersonService>();
             services.AddControllers();
         }
         public void Configure(IApplicationBuilder app)

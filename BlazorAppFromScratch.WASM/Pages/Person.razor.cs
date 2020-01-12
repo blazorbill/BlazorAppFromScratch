@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BlazorAppFromScratch.DTO;
-using BlazorAppFromScratch.Client.BL;
+using BlazorAppFromScratch.Client.BL.Services;
 using Microsoft.AspNetCore.Components;
 
 namespace BlazorAppFromScratch.WASM.Pages
@@ -12,7 +12,7 @@ namespace BlazorAppFromScratch.WASM.Pages
         private PersonDTO MyPerson = new PersonDTO();
 
         [Inject]
-        private IPersonService personService { get; set; }
+        private IPersonClientService personService { get; set; }
         protected override async Task OnInitializedAsync()
         {
             MyPersons = await personService.GetPersons();
