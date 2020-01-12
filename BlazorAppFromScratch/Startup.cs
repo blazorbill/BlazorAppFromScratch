@@ -17,6 +17,10 @@ namespace BlazorAppFromScratch
         }
         public void Configure(IApplicationBuilder app)
         {
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("https://localhost:44379");
+            });
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
