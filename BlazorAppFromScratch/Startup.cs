@@ -15,7 +15,7 @@ namespace BlazorAppFromScratch
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<BlazorAppFromScratch.Client.BL.IPersonService, BlazorAppFromScratch.Client.BL.PersonService>();
             services.AddServerSideBlazor();
-            services.AddConnections();
+            services.AddControllers();
             services.AddRazorPages();
         }
         public void Configure(IApplicationBuilder app)
