@@ -5,9 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Blazor.Server" Version="3.1.0-preview4.19579.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BlazorAppFromScratch.Client.BL\BlazorAppFromScratch.Client.BL.csproj" />
     <ProjectReference Include="..\BlazorAppFromScratch.DTO\BlazorAppFromScratch.DTO.csproj" />
     <ProjectReference Include="..\BlazorAppFromScratch.Server.BL\BlazorAppFromScratch.Server.BL.csproj" />
+    <ProjectReference Include="..\BlazorAppFromScratch.WASM\BlazorAppFromScratch.WASM.csproj" />
   </ItemGroup>
 
 </Project>

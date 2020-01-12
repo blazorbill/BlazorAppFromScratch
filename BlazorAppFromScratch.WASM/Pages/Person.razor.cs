@@ -4,7 +4,7 @@ using BlazorAppFromScratch.DTO;
 using BlazorAppFromScratch.Client.BL;
 using Microsoft.AspNetCore.Components;
 
-namespace BlazorAppFromScratch.Pages
+namespace BlazorAppFromScratch.WASM.Pages
 {
     public partial class Person
     {
@@ -13,7 +13,6 @@ namespace BlazorAppFromScratch.Pages
 
         [Inject]
         private IPersonService personService { get; set; }
-
         protected override async Task OnInitializedAsync()
         {
             MyPersons = await personService.GetPersons();

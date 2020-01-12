@@ -14,19 +14,17 @@ namespace BlazorAppFromScratch
         {
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<BlazorAppFromScratch.Client.BL.IPersonService, BlazorAppFromScratch.Client.BL.PersonService>();
-            services.AddServerSideBlazor();
-            services.AddConnections();
-            services.AddRazorPages();
+            services.AddControllers();
         }
         public void Configure(IApplicationBuilder app)
         {
             app.UseStaticFiles();
+            app.UseClientSideBlazorFiles<WASM.Startup>();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
                 endpoints.MapDefaultControllerRoute();
+                endpoints.MapFallbackToClientSideBlazor<WASM.Startup>("index.html");
             });
         }
     }
