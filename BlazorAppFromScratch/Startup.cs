@@ -12,7 +12,7 @@ namespace BlazorAppFromScratch
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IMyNameService, MyNameService>();
+            services.AddScoped<IPersonService, PersonService>();
             services.AddServerSideBlazor();
             services.AddRazorPages();
         }

@@ -1,120 +1,18 @@
 ﻿@page "/person"
-@using BlazorAppFromScratch.DTO
-<h3>Person</h3>
-
-<EditForm OnValidSubmit="@SubmitButtonPressed" EditContext="@editContext">
-    <DataAnnotationsValidator />
-    <p>
-        <label for="myfirstname">First Name:</label>
-        <InputText @bind-Value="myPerson.FirstName" id="myfirstname" />
-        <ValidationMessage For="(() => myPerson.FirstName)" />
-    </p>
-    <p>
-        <label for="mylastname">Last Name:</label>
-        <InputText @bind-Value="myPerson.LastName" id="mylastname" />
-    </p>
-    <p>
-        <label for="myage">Age:</label>
-        <InputNumber @bind-Value="myPerson.Age" id="myAge" />
-        <ValidationMessage For="(() => myPerson.Age)" />
-    </p>
-    <p>
-        <label>Gender:</label>
-        <input type="radio" id="female" value="Female" @onchange="GenderChanged" checked="@(myPerson.Gender == "Female")" />
-        <label for="female">Female</label>
-        <input type="radio" id="male" value="Male" @onchange="GenderChanged" checked="@(myPerson.Gender == "Male")" />
-        <label for="male">Male</label>
-    </p>
-    @if (myPerson.Gender != "")
-    {
-        <p>
-            <label>@myPerson.Gender  Activities</label>
-        </p>
-    }
-
-    <p>
-        <label for="petowned">Do you have pets?</label>
-        <InputCheckbox id="petowned" @bind-Value="myPerson.HasPets" />
-    </p>
-    @if (myPerson.HasPets)
-    {
-        <p>
-            <label>You have pets!!</label>
-        </p>
-    }
-
-
-    <p>
-        <label for="pettype">Pet Type: </label>
-        <InputSelect id="pettype" @bind-Value="myPetType">
-            <option value="">None</option>
-            <option value="Dog">Dog</option>
-            <option value="Cat">Cat</option>
-            <option value="Other">Other</option>
-        </InputSelect>
-        <ValidationMessage For="(() => myPerson.PetType)" />
-    </p>
-    <p>
-        <label>Pet Type: @myPerson.PetType</label>
-    </p>
-
-
-
-
-    <p>
-        <button disabled="@submitDisabled" type="submit">Submit</button>
-    </p>
-
-
-    <p>
-        <label>Result: @finalResult</label>
-    </p>
-
-</EditForm>
-
-@code {
-
-    private PersonDTO myPerson = new PersonDTO();
-    private string finalResult = "";
-    private string _myPetType;
-    private string myPetType
-    {
-        get
-        {
-            return _myPetType;
-        }
-        set
-        {
-            _myPetType = value;
-            DoSomething();
-        }
-    }
-
-    private bool submitDisabled = true;
-
-    private EditContext editContext;
-
-    protected override void OnInitialized()
-    {
-        this.editContext = new EditContext(this.myPerson);
-        this.editContext.OnFieldChanged += (sender, e) =>
-        {
-            submitDisabled = !editContext.Validate();
-            this.StateHasChanged();
-        };
-    }
-
-    void SubmitButtonPressed()
-    {
-        finalResult = $"{myPerson.FirstName} {myPerson.LastName} is {myPerson.Age} years old.";
-    }
-
-    void GenderChanged(ChangeEventArgs args)
-    {
-        myPerson.Gender = args.Value.ToString();
-    }
-    void DoSomething()
-    {
-        Console.WriteLine(myPetType);
-    }
-}
+<h3>Person Component</h3>
+<div class="row mt-4">
+    <div class="col-2">
+        <label>Select Person:</label>
+    </div>
+    <div class="col-4">
+        <select @onchange="OnPersonSelect">
+            @for (var i = 0; i < MyPersons.Count; i++)
+            {
+                <option value="@MyPersons[i].ID">@MyPersons[i].FullName</option>
+            }
+        </select>
+    </div>
+</div>
+<FieldLabel fldLabel="First Name" fldValue="@MyPerson.FirstName" />
+<FieldLabel fldLabel="Last Name" fldValue="@MyPerson.LastName" />
+<FieldLabel fldLabel="Gender" fldValue="@MyPerson.Gender" />
