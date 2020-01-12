@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 
 namespace BlazorAppFromScratch.Client.BL
 {
-    public class PersonService : IPersonService
+    public class PersonClientService : IPersonClientService
     {
-        public PersonService()
+        public PersonClientService()
         {
 
         }

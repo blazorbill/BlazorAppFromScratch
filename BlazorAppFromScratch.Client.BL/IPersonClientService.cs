@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlazorAppFromScratch.Client.BL
 {
-    public interface IPersonService
+    public interface IPersonClientService
     {
         Task<List<PersonDTO>> GetPersons();
         Task<PersonDTO> GetPerson(int id);

@@ -12,7 +12,7 @@ namespace BlazorAppFromScratch.Pages
         private PersonDTO MyPerson = new PersonDTO();
 
         [Inject]
-        private IPersonService personService { get; set; }
+        private IPersonClientService personService { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
