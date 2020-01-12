@@ -13,7 +13,9 @@ namespace BlazorAppFromScratch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<BlazorAppFromScratch.Client.BL.IPersonService, BlazorAppFromScratch.Client.BL.PersonService>();
             services.AddServerSideBlazor();
+            services.AddConnections();
             services.AddRazorPages();
         }
         public void Configure(IApplicationBuilder app)
@@ -24,6 +26,7 @@ namespace BlazorAppFromScratch
             {
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }

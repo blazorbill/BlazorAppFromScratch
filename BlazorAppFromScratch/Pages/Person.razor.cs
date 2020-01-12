@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using BlazorAppFromScratch.DTO;
-using BlazorAppFromScratch.Server.BL.Services;
+using BlazorAppFromScratch.Client.BL;
 using Microsoft.AspNetCore.Components;
-using System.Diagnostics;
 
 namespace BlazorAppFromScratch.Pages
 {
@@ -18,16 +14,16 @@ namespace BlazorAppFromScratch.Pages
         [Inject]
         private IPersonService personService { get; set; }
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
-            MyPersons = personService.GetPersons();
-            MyPerson = personService.GetPerson(1);
+            MyPersons = await personService.GetPersons();
+            MyPerson = await personService.GetPerson(1);
         }
 
-        void OnPersonSelect(ChangeEventArgs e)
+        async Task OnPersonSelect(ChangeEventArgs e)
         {
             int id = int.Parse(e.Value.ToString());
-            MyPerson = personService.GetPerson(id);
+            MyPerson = await personService.GetPerson(id);
         }
     }
 }
