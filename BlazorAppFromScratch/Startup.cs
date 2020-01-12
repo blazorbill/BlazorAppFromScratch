@@ -13,18 +13,16 @@ namespace BlazorAppFromScratch
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPersonService, PersonService>();
-            services.AddScoped<BlazorAppFromScratch.Client.BL.IPersonService, BlazorAppFromScratch.Client.BL.PersonService>();
             services.AddControllers();
         }
         public void Configure(IApplicationBuilder app)
         {
             app.UseStaticFiles();
-            app.UseClientSideBlazorFiles<WASM.Startup>();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
-                endpoints.MapFallbackToClientSideBlazor<WASM.Startup>("index.html");
+                endpoints.MapFallbackToFile("index.html");
             });
         }
     }
